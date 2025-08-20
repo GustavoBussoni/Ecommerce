@@ -1,0 +1,370 @@
+/* Zera margem e padding padrão do navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+/* Começo do CSS "Header" */
+/* Faixa superior fixa */
+.topbar {
+  background-color: #0B1F43;
+  color: white;
+  padding: 8px 16px;
+  font-size: 0.75rem;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1100;
+}
+
+/* Header principal */
+.header {
+  position: fixed;
+  top: 29px;
+  left: 0;
+  width: 100%;
+  padding: 20px 32px;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(96, 96, 96, 0.1);
+  color: white;
+  border-bottom: 1px solid white;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.header-content {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Lado esquerdo */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-left img {
+  width: 24px;
+  height: auto;
+}
+
+.header-left .menu-links {
+  display: flex;
+  gap: 25px;
+}
+
+.header-left .menu-links span {
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* Centro (pesquisa) */
+.header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background-color: transparent;
+  color: white;
+  width: 500px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  margin-left: 8px;
+  flex: 1;
+  font-size: 0.9rem;
+  background: transparent;
+  color: white;
+}
+
+.search-bar input::placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+/* Ícone de lupa */
+.search-bar .icon {
+  font-size: 1rem;
+  color: white; /* ícone branco sólido */
+}
+
+/* Lado esquerdo mais colado na borda */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: -90px;   /* garante que não tenha afastamento */
+}
+
+.header-content {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0;  /* remove qualquer afastamento extra */
+}
+
+
+/* Direita (login) */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.header-right i {
+  font-size: 1.2rem;
+}
+
+.header-right .icon {
+  font-size: 1.1rem;
+  color: white; /* branquinho */
+  margin-right: 5px;
+}
+
+/* Classe que ativa no scroll ou hover */
+.header.active,
+.header:hover {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Esquerda */
+.header-left .menu-links span,
+.header-left img,
+.header-right span,
+.header-right .icon,
+.search-bar input::placeholder,
+.search-bar .icon {
+  transition: color 0.3s, border-color 0.3s;
+}
+
+/* Elementos quando ativo (scroll ou hover) */
+.header.active .header-left .menu-links span,
+.header:hover .header-left .menu-links span,
+.header.active .header-right span,
+.header:hover .header-right span,
+.header.active .search-bar input::placeholder,
+.header:hover .search-bar input::placeholder {
+  color: #0B1F43;
+}
+
+.header.active .header-left img,
+.header:hover .header-left img,
+.header.active .header-right .icon,
+.header:hover .header-right .icon,
+.header.active .search-bar .icon,
+.header:hover .search-bar .icon {
+  color: #0B1F43;
+}
+
+.header.active .search-bar {
+  border: 1px solid #000;
+}
+
+.header:hover .search-bar {
+  border: 1px solid #000;
+}
+
+/* Começo do CSS "Hero" */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 800px; /* ajusta conforme imagem */
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;   /* fixa no topo */
+  left: 0;
+  width: 100%;
+  height: auto;
+  min-height: 100%; 
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-text {
+  position: relative;
+  color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 20px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+}
+
+/* Começo do CSS "Sobre" */
+.sobre {
+  padding: 50px;
+  background-color: white;
+  color: #333;
+  text-align: left; /* Alinhamento à esquerda */
+}
+
+.container {
+  max-width: 1200px; /* aumenta um pouco o limite geral */
+  margin-left: 20px;
+}
+
+.sobre h2 {
+  font-size: 1.2rem; /* fonte menor */
+  margin-bottom: 16px;
+}
+
+.sobre p {
+  font-size: 1rem; /* reduzindo a fonte */
+  line-height: 1.6;
+  max-width: 60%; /* ocupa metade da tela */
+}
+
+
+/* Começo do CSS "Newsletter" */
+.newsletter {
+  background-color: rgb(11, 31, 67);
+  padding: 45px 20px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.newsletter-content {
+  max-width: 800px;
+  width: 100%;
+  text-align: left; /* alinhamento à esquerda */
+  color: white;
+  margin-left: 53px; /* deslocamento para esquerda */
+}
+
+.newsletter-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.newsletter-content p {
+  font-size: 0.9rem;
+  margin-bottom: 22px;
+}
+
+/* Formulário com input e botão lado a lado */
+form {
+  display: flex;
+  justify-content: flex-start; /* alinha o form à esquerda */
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+input[type="email"] {
+  padding: 14px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 2px;
+  width: 350px;       /* largura fixa */
+  min-width: unset;
+}
+
+button {
+  padding: 14px 24px;
+  background-color: rgb(183, 179, 179);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #ffffff;
+  color: rgb(183, 179, 179);
+}
+
+.mensagem-sucesso {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #c6ffc6;
+}
+
+
+/* Começo do CSS "Footer" */
+.footer {
+  background-color: #fff;
+  color: #003366; /* azul institucional */
+  padding: 40px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: left;
+  margin-left: 30px;
+}
+
+.footer h3 {
+  font-size: 0.8rem;
+  margin-bottom: 16px;
+  color: #0B1F43;
+  font-weight: bold;
+}
+
+.footer p {
+  font-size: 0.7rem;
+  margin-bottom: 10px;
+  color: #0B1F43;
+}
+
+.footer a {
+  display: block;
+  margin-bottom: 8px;
+  color: #0B1F43;
+  font-size: 0.78rem;
+  text-decoration: none;
+  transition: color 0.2s;
+  width: auto;
+}
+
+.footer a:hover {
+  color:#254582;
+  text-decoration: underline;
+}
+
+/* parte inferior (copy) */
+.footer-bottom {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+}
