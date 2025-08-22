@@ -30,7 +30,7 @@
   padding: 20px 32px;
   display: flex;
   justify-content: center;
-  background-color: rgba(96, 96, 96, 0.1);
+  background-color: rgba(74, 74, 74, 0.1);
   color: white;
   border-bottom: 1px solid white;
   transition: all 0.3s ease;
@@ -62,11 +62,30 @@
   gap: 25px;
 }
 
+/* Links do menu */
 .header-left .menu-links span {
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 500;
   color: #ffffff;
+  position: relative; /* necessário pro ::after funcionar */
+  transition: color 0.3s ease;
+}
+
+.header-left .menu-links span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px; /* distância abaixo do texto */
+  width: 0;
+  height: 2px;
+  background-color: #F76300; /* cor do underline */
+  transition: width 0.3s ease;
+}
+
+/* Quando passa o mouse → underline cresce */
+.header-left .menu-links span:hover::after {
+  width: 100%;
 }
 
 /* Centro (pesquisa) */
@@ -188,6 +207,20 @@
   border: 1px solid #000;
 }
 
+/* Input da searchbar quando header ativo ou hover */
+.header.active .search-bar input,
+.header:hover .search-bar input {
+  color: #0B1F43;      /* cor do texto digitado */
+}
+
+/* Placeholder também */
+.header.active .search-bar input::placeholder,
+.header:hover .search-bar input::placeholder {
+  color: #0B1F43;
+  opacity: 0.8;
+}
+
+
 /* Começo do CSS "Hero" */
 .hero {
   position: relative;
@@ -237,6 +270,7 @@
 .container {
   max-width: 1200px; /* aumenta um pouco o limite geral */
   margin-left: 20px;
+  color: #0B1F43;
 }
 
 .sobre h2 {
@@ -245,7 +279,7 @@
 }
 
 .sobre p {
-  font-size: 1rem; /* reduzindo a fonte */
+  font-size: 0.8rem; /* reduzindo a fonte */
   line-height: 1.6;
   max-width: 60%; /* ocupa metade da tela */
 }
